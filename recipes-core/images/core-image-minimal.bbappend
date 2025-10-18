@@ -4,7 +4,7 @@ YOCTO_USER ?= "yocto"
 
 EXTRA_USERS_PARAMS = "useradd -p '${YOCTO_PASSWORD}' -G users,sudo ${YOCTO_USER}"
 
-IMAGE_INSTALL:append = "sudo dtc"
+IMAGE_INSTALL:append = "sudo dtc kernel-modules"
 
 ROOTFS_POSTPROCESS_COMMAND += "enable_sudo_group; add_sudoers_file;"
 
