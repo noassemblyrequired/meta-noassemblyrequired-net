@@ -8,11 +8,12 @@ require recipes-kernel/linux/linux-yocto.inc
 
 inherit kernel
 
+FILESEXTRAPATHS:prepend := "${THISDIR}/${PN}:"
+
 SRC_URI = "${KERNEL_REPO};protocol=${KERNEL_PROT};branch=${KBRANCH}"
+SRC_URI:append = " file://socfpga.cfg"
 
 S = "${WORKDIR}/git"
-
-FILESEXTRAPATHS:prepend := "${THISDIR}/${PN}:"
 
 LINUX_VERSION_EXTENSION ?= "-altera-lts" 
 
