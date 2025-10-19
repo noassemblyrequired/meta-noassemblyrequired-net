@@ -7,5 +7,4 @@ PREFERRED_PROVIDER_virtual/kernel ?= "linux-altera-lts"
 MACHINE_KERNEL_PR = "r1"
 KERNEL_IMAGETYPE ?= "zImage"
 MACHINE_EXTRA_RECOMMENDS =  " kernel_modules "
-MACHINE_FEATURES = "kernel26"
 
