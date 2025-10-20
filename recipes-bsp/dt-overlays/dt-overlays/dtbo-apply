@@ -1,0 +1,30 @@
+#!/bin/sh
+### BEGIN INIT INFO
+# Provides:          dtbo-apply
+# Required-Start:    $local_fs
+# Required-Stop:
+# Default-Start:     3 5
+# Default-Stop:
+# Short-Description: Apply DT overlays
+### END INIT INFO
+
+OVERLAY_DIR="/lib/firmware/overlays"
+
+case "$1" in
+start)
+    echo "Applying DT overlays..."
+    if [ -d /sys/kernel/config/device-tree/overlays ]; then
+        for dtbo in ${OVERLAY_DIR}/*.dtbo; do
+            name=$(basename $dtbo .dtbo)
+            mkdir -p /sys/kernel/config/device-tree/overlays/$name
+            cat $dtbo > /sys/kernel/config/device-tree/overlays/$name/dtbo
+        done
+    fi
+    ;;
+stop)
+    ;;
+*)
+    echo "Usage: $0 start|stop"
+    exit 1
+    ;;
+esac

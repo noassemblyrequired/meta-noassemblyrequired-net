@@ -1,0 +1,33 @@
+/dts-v1/;
+/plugin/;
+
+/ {
+    fragment@0 {
+        target = <&fpga_bridge0>;
+        __overlay__ {
+                status = "okay";
+                bridge-enable = <1>;
+        };
+    };
+    fragment@1 {
+        target = <&fpga_bridge1>;
+        __overlay__ {
+                status = "okay";
+                bridge-enable = <1>;
+        };
+    };
+    fragment@2 {
+        target = <&fpga_bridge2>;
+        __overlay__ {
+                status = "okay";
+                bridge-enable = <1>;
+        };
+    };
+    fragment@3 {
+        target = <&fpga_bridge3>;
+        __overlay__ {
+                status = "okay";
+                bridge-enable = <1>;
+        };
+    };
+};

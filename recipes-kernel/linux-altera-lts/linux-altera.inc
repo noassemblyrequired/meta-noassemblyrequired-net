@@ -11,7 +11,7 @@ inherit kernel
 FILESEXTRAPATHS:prepend := "${THISDIR}/${PN}:"
 
 SRC_URI = "${KERNEL_REPO};protocol=${KERNEL_PROT};branch=${KBRANCH}"
-SRC_URI:append = " file://socfpga.cfg"
+SRC_URI:append = " file://socfpga.cfg "
 
 S = "${WORKDIR}/git"
 
